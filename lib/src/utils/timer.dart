@@ -30,6 +30,8 @@ class DsTimer {
   // TODO: does it need to use another hashset for quick search?
   static List<Function> _callbacks = [];
 
+  static void clear() { _callbacks.clear(); }
+  
   //static Map<Function, int> _timerCallbacks = new Map<Function, int>();
 
   static void _startTimer() {
