@@ -322,6 +322,10 @@ class WebSocketConnection extends Connection {
   }
 
   void addData(Map m) {
+    if (socket.readyState != WebSocket.OPEN) {
+       return;
+    }
+    
     Object encoded = codec.encodeFrame(m);
 
     if (logger.isLoggable(Level.FINEST)) {
