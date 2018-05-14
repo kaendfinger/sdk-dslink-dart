@@ -322,7 +322,7 @@ class WebSocketConnection extends Connection {
   }
 
   void addData(Map m) {
-    if (socket.readyState != WebSocket.OPEN) {
+    if (socket.readyState != WebSocket.OPEN || _onDoneHandled) {
        return;
     }
     
